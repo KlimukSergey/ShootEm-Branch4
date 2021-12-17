@@ -35,7 +35,8 @@ private float _currentState;
 
                 break;
                 case 2:
-                if(agent.remainingDistance<=1) Destroy(gameObject);
+                if(agent.remainingDistance<=1 && agent.destination==home.position)
+                Destroy(gameObject);
                 break;
                 default :break;
         }
