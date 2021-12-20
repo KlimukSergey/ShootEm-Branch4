@@ -5,7 +5,7 @@ using UnityEngine;
 public class EneysSpawner : MonoBehaviour
 {
     [SerializeField] private Transform[] spawn;
-    [SerializeField] private float timeToSpawn;
+    [SerializeField] private float timeToSpawn=3f;
     [SerializeField] private GameObject[] enemyPrefab;
     [SerializeField] private GameObject janitor;
     public bool isSpawn;
@@ -20,14 +20,9 @@ public class EneysSpawner : MonoBehaviour
         StartCoroutine(Spawn());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     IEnumerator Spawn()
     {
-        yield return new WaitForSeconds(timeToSpawn);
+        yield return new WaitForSeconds(Random.Range(timeToSpawn,timeToSpawn+2f));
         if (isSpawn) SpawnEnemy(stoppingDistance);
         StartCoroutine(Spawn());
     }
@@ -37,7 +32,7 @@ public class EneysSpawner : MonoBehaviour
         GameObject obj = Instantiate(enemyPrefab[Random.Range(0, enemyPrefab.Length)],
         _home.position, Quaternion.identity);
         enemysCount++;
-        obj.GetComponent<EnemyContr>().home = _home;
+        obj.GetComponent<EnemyContr>().home = _home;// Установка врагу домашнего адреса 
 
     }
     public void LevelUp()

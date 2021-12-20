@@ -38,7 +38,6 @@ public class JanitorAnim : MonoBehaviour
 
     public void Hit()
     {
-        print("POP");
         anim.SetTrigger("Hit");
     }
     public void Death()
