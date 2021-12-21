@@ -71,6 +71,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 1
+  target: {fileID: 0}
   home: {fileID: 0}
 --- !u!136 &4827920385879576945
 CapsuleCollider:
@@ -83,9 +84,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.76655746
-  m_Height: 3.5056376
+  m_Height: 1.7074351
   m_Direction: 1
-  m_Center: {x: -0.00000023841858, y: 1.7148516, z: 0}
+  m_Center: {x: -0.00000023841858, y: 0.81575036, z: 0}
 --- !u!136 &3621346112462113017
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -97,9 +98,9 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.99454296
-  m_Height: 3.5056376
+  m_Height: 1.9890859
   m_Direction: 1
-  m_Center: {x: -0.00000023841858, y: 1.7148516, z: 0.2279855}
+  m_Center: {x: -0.00000023841858, y: 0.95657575, z: 0.2279855}
 --- !u!114 &2619894466536807762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,7 +142,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9b5109d34bc367d4888b12361714bc34, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.18
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9b5109d34bc367d4888b12361714bc34, type: 3}
       propertyPath: m_LocalPosition.z

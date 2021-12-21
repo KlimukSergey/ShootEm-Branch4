@@ -5,16 +5,18 @@ using UnityEngine;
 public class PlayerAnim : MonoBehaviour
 {
     private Animator anim;
-    // Start is called before the first frame update
+    private CharacterController player;
+
+
     void Start()
     {
         anim = GetComponent<Animator>();
+        player = GetComponentInParent<CharacterController>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        anim.SetFloat("velocity",player.velocity.magnitude);
     }
     public void Laser(bool active)
     {

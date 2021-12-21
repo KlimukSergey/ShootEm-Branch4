@@ -37,9 +37,9 @@ public class EnemyContr : MonoBehaviour
                 break;
 
             case 2:
-                if (agent.remainingDistance == 0)
+                if (agent.remainingDistance < 1)
                 {
-
+                    FindObjectOfType<EneysSpawner>().enemies.Remove(gameObject);
                     Destroy(gameObject);
                 }
                 break;
@@ -52,7 +52,7 @@ public class EnemyContr : MonoBehaviour
     {
         if (_currentState != 2)
         {
-            _currentState=0;
+            _currentState = 0;
             agent.destination = home.position;
             agent.speed = 3f;
             agent.stoppingDistance = 1;

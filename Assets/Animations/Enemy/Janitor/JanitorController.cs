@@ -22,6 +22,7 @@ public class JanitorController : MonoBehaviour
     private bool isAlive = true;
     private Text healthText;
     private float _speed;
+   
 
     void Awake()
     {
@@ -34,6 +35,7 @@ public class JanitorController : MonoBehaviour
         healthText.text = /* $"Health: {currentHealth.ToString()}"*/
             "";
         _speed = agent.speed;
+        
     }
 
     void Update()
@@ -52,20 +54,18 @@ public class JanitorController : MonoBehaviour
     public void Attack()
     {
         janitorAnim.Attack();
+
         if (
             janitorAnim.anim.GetCurrentAnimatorStateInfo(0).IsName("Standing Melee Attack Downward")
         )
         {
             broomHit.transform.LookAt(target.position);
             Ray ray = new Ray(broomHit.transform.position, target.transform.position);
-            if (
-                Physics.Raycast(
-                    broomHit.transform.position,
-                    broomHit.transform.forward,
-                    2f,
-                    playerMask
-                )
-            )
+
+            if ( Physics.Raycast(
+                 broomHit.transform.position,
+                 broomHit.transform.forward,
+                 2f,playerMask))
             {
                 target.GetComponent<Health>().TakeDamage(damage);
             }
@@ -76,7 +76,10 @@ public class JanitorController : MonoBehaviour
         if (!_noneDamage && isAlive)
         {
             janitorAnim.Hit();
+            
             agent.speed = 0f;
+            StartCoroutine(MoveStop());
+
             currentHealth -= dmg;
             _noneDamage = true;
             healthText.text = $"Health: {currentHealth.ToString()}";
@@ -95,7 +98,7 @@ public class JanitorController : MonoBehaviour
         currentHealth = 0;
         StopCoroutine(NonDamage());
         StartCoroutine(Broom());
-        agent.enabled = false;
+       this.agent.enabled=false;
         janitorAnim.Death();
         Destroy(gameObject, 15f);
         FindObjectOfType<Score>().CountScore(20);
@@ -105,7 +108,11 @@ public class JanitorController : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         _noneDamage = false;
-        agent.speed = _speed;
+    }
+    IEnumerator MoveStop()
+    {
+        yield return new WaitForSeconds(1f);
+                agent.speed = _speed;
     }
     IEnumerator Broom()
     {

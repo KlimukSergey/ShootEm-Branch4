@@ -4,36 +4,50 @@ using UnityEngine;
 
 public class EneysSpawner : MonoBehaviour
 {
-    [SerializeField] private Transform[] spawn;
-    [SerializeField] private float timeToSpawn=3f;
-    [SerializeField] private GameObject[] enemyPrefab;
-    [SerializeField] private GameObject janitor;
+    [SerializeField]
+    private Transform[] spawn;
+    [SerializeField]
+    private float timeToSpawn = 3f;
+    [SerializeField]
+    private GameObject[] enemyPrefab;
+    [SerializeField]
+    private GameObject janitor;
+    private GameObject Boss;
+    [SerializeField]
+    private float timeToSpawnJanitor=10f;
+    public List<GameObject> enemies;
     public bool isSpawn;
     private int enemysCount;
     private float stoppingDistance = 5;
+     private Transform janitorSpawn;
 
     void Awake()
     {
-        janitor = GameObject.Find("Janitor");
-        janitor.SetActive(false);
+        enemies = new List<GameObject>();
+        Boss = GameObject.Find("Janitor");
+        Boss.SetActive(false);
         SpawnEnemy(stoppingDistance);
         StartCoroutine(Spawn());
+        janitorSpawn=GameObject.Find("JanitorSpawn").GetComponent<Transform>();
     }
 
     IEnumerator Spawn()
     {
-        yield return new WaitForSeconds(Random.Range(timeToSpawn,timeToSpawn+2f));
-        if (isSpawn) SpawnEnemy(stoppingDistance);
+        yield return new WaitForSeconds(timeToSpawn);
+        if (isSpawn && enemies.Count <30)
+            SpawnEnemy(stoppingDistance);
         StartCoroutine(Spawn());
     }
     void SpawnEnemy(float stopDistance)
     {
         Transform _home = spawn[Random.Range(0, spawn.Length)];
-        GameObject obj = Instantiate(enemyPrefab[Random.Range(0, enemyPrefab.Length)],
-        _home.position, Quaternion.identity);
-        enemysCount++;
-        obj.GetComponent<EnemyContr>().home = _home;// Установка врагу домашнего адреса 
-
+        GameObject obj = Instantiate(
+            enemyPrefab[Random.Range(0, enemyPrefab.Length)],
+            _home.position,
+            Quaternion.identity
+        );
+        enemies.Add(obj);
+        obj.GetComponent<EnemyContr>().home = _home; // Установка врагу домашнего адреса
     }
     public void LevelUp()
     {
@@ -45,12 +59,11 @@ public class EneysSpawner : MonoBehaviour
             e.AtHome();
         }
         StartCoroutine(Film());
-
     }
     IEnumerator Film()
     {
         yield return new WaitForSeconds(10);
-        janitor.SetActive(true);
+        Boss.SetActive(true);
         //активация таймлинии
         //в таймлинию вставить маркер за движение игрока
         //
@@ -62,5 +75,19 @@ public class EneysSpawner : MonoBehaviour
         stoppingDistance += 2; //Прокачка Карапузов
 
         StartCoroutine(Spawn());
+        StartCoroutine(JanitorSpawn());
+    }
+
+    IEnumerator JanitorSpawn()
+    {
+        yield return new WaitForSeconds(timeToSpawnJanitor);
+        if(isSpawn)
+        {
+        GameObject jan = Instantiate(
+            janitor,janitorSpawn.position,
+        Quaternion.identity);
+       // jan.GetComponent<NavMeshAgent>().enabled=true;
+        }
+        JanitorSpawn();
     }
 }
