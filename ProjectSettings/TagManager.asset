@@ -12,6 +12,7 @@ TagManager:
   - bulletDrop
   - aidKit
   - Boss
+  - PlayerHead
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - 
   - Ground
   - Player
-  - 
+  - HeadPlayer
   - 
   - 
   - 

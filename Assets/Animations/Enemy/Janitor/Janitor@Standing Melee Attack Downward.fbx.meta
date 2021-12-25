@@ -5,7 +5,7 @@ ModelImporter:
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: mixamo.com
+    second: Standing Melee Attack Downward
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -17,7 +17,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    motionNodeName: 
+    motionNodeName: metarig.002
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
@@ -26,14 +26,158 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Standing Melee Attack Downward
+      takeName: mixamo.com
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 68
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves:
+      - name: Curve
+        curve:
+          serializedVersion: 2
+          curve:
+          - serializedVersion: 3
+            time: -0.011112213
+            value: -0.009674072
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1.015564
+            value: 0.061798096
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          preInfinity: 3
+          postInfinity: 3
+          rotationOrder: 4
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: metarig.002
+        weight: 1
+      - path: metarig.002/spine
+        weight: 1
+      - path: metarig.002/spine/pelvis.L
+        weight: 1
+      - path: metarig.002/spine/pelvis.L/pelvis.L_end
+        weight: 1
+      - path: metarig.002/spine/pelvis.R
+        weight: 1
+      - path: metarig.002/spine/pelvis.R/pelvis.R_end
+        weight: 1
+      - path: metarig.002/spine/spine.001
+        weight: 1
+      - path: metarig.002/spine/spine.001/spine.002
+        weight: 1
+      - path: metarig.002/spine/spine.001/spine.002/spine.003
+        weight: 1
+      - path: metarig.002/spine/spine.001/spine.002/spine.003/breast.L
+        weight: 1
+      - path: metarig.002/spine/spine.001/spine.002/spine.003/breast.L/breast.L_end
+        weight: 1
+      - path: metarig.002/spine/spine.001/spine.002/spine.003/breast.R
+        weight: 1
+      - path: metarig.002/spine/spine.001/spine.002/spine.003/breast.R/breast.R_end
+        weight: 1
+      - path: metarig.002/spine/spine.001/spine.002/spine.003/shoulder.L
+        weight: 1
+      - path: metarig.002/spine/spine.001/spine.002/spine.003/shoulder.L/upper_arm.L
+        weight: 1
+      - path: metarig.002/spine/spine.001/spine.002/spine.003/shoulder.L/upper_arm.L/forearm.L
+        weight: 1
+      - path: metarig.002/spine/spine.001/spine.002/spine.003/shoulder.L/upper_arm.L/forearm.L/hand.L
+        weight: 1
+      - path: metarig.002/spine/spine.001/spine.002/spine.003/shoulder.L/upper_arm.L/forearm.L/hand.L/hand.L_end
+        weight: 1
+      - path: metarig.002/spine/spine.001/spine.002/spine.003/shoulder.R
+        weight: 1
+      - path: metarig.002/spine/spine.001/spine.002/spine.003/shoulder.R/upper_arm.R
+        weight: 1
+      - path: metarig.002/spine/spine.001/spine.002/spine.003/shoulder.R/upper_arm.R/forearm.R
+        weight: 1
+      - path: metarig.002/spine/spine.001/spine.002/spine.003/shoulder.R/upper_arm.R/forearm.R/hand.R
+        weight: 1
+      - path: metarig.002/spine/spine.001/spine.002/spine.003/shoulder.R/upper_arm.R/forearm.R/hand.R/hand.R_end
+        weight: 1
+      - path: metarig.002/spine/spine.001/spine.002/spine.003/spine.004
+        weight: 1
+      - path: metarig.002/spine/spine.001/spine.002/spine.003/spine.004/spine.005
+        weight: 1
+      - path: metarig.002/spine/spine.001/spine.002/spine.003/spine.004/spine.005/spine.006
+        weight: 1
+      - path: metarig.002/spine/spine.001/spine.002/spine.003/spine.004/spine.005/spine.006/spine.006_end
+        weight: 1
+      - path: metarig.002/spine/thigh.L
+        weight: 1
+      - path: metarig.002/spine/thigh.L/shin.L
+        weight: 1
+      - path: metarig.002/spine/thigh.L/shin.L/foot.L
+        weight: 1
+      - path: metarig.002/spine/thigh.L/shin.L/foot.L/heel.02.L
+        weight: 1
+      - path: metarig.002/spine/thigh.L/shin.L/foot.L/heel.02.L/heel.02.L_end
+        weight: 1
+      - path: metarig.002/spine/thigh.L/shin.L/foot.L/toe.L
+        weight: 1
+      - path: metarig.002/spine/thigh.L/shin.L/foot.L/toe.L/toe.L_end
+        weight: 1
+      - path: metarig.002/spine/thigh.R
+        weight: 1
+      - path: metarig.002/spine/thigh.R/shin.R
+        weight: 1
+      - path: metarig.002/spine/thigh.R/shin.R/foot.R
+        weight: 1
+      - path: metarig.002/spine/thigh.R/shin.R/foot.R/heel.02.R
+        weight: 1
+      - path: metarig.002/spine/thigh.R/shin.R/foot.R/heel.02.R/heel.02.R_end
+        weight: 1
+      - path: metarig.002/spine/thigh.R/shin.R/foot.R/toe.R
+        weight: 1
+      - path: metarig.002/spine/thigh.R/shin.R/foot.R/toe.R/toe.R_end
+        weight: 1
+      - path: Sphere.005
+        weight: 1
+      - path: Sphere.006
+        weight: 1
+      - path: Sphere.009
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
     lODScreenPercentages: []

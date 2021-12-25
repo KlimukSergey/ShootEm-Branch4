@@ -12,13 +12,14 @@ public class EnemyContr : MonoBehaviour
     public Transform target;
     private Transform player;
     public Transform home;
-    private const float Attach_STATE = 1,
+
+    private const float
+        Attach_STATE = 1,
         GoHome_STATE = 2;
     private float _currentState;
 
     void Awake()
     {
-        // home.position=this.gameObject.GetComponent<Transform>().position;
 
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.Find("Player").GetComponent<Transform>();
@@ -27,7 +28,6 @@ public class EnemyContr : MonoBehaviour
         _currentState = 1;
     }
 
-    // Update is called once per frame
     void Update()
     {
         switch (_currentState)
