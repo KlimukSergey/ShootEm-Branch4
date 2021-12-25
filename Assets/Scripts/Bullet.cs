@@ -11,14 +11,19 @@ public class Bullet : MonoBehaviour
     {
         _score = GameObject.Find("GameManager").GetComponent<Score>();
         Rigidbody rb = GetComponent<Rigidbody>();
+        if(this.gameObject.CompareTag("SweetBall"))
+ rb.velocity = Vector3.forward*200f;
+
+        else  
         rb.AddForce(transform.forward * 1200f);
         Destroy(this.gameObject, 10f);
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        if (!collision.gameObject.CompareTag("Player"))
-            Destroy(this.gameObject);
+        if (!collision.gameObject.CompareTag("Player")&&
+        !collision.gameObject.CompareTag("Ground"))
+          //  Destroy(this.gameObject);
 
         if (collision.gameObject.CompareTag("Enemy"))
         {

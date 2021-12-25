@@ -5,9 +5,12 @@ using UnityEngine.UI;
 
 public class Shooting : MonoBehaviour
 {
-    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField]
+    private GameObject bulletPrefab;
+    [SerializeField]
+    private GameObject sweetBallPrefab;
     PlayerAnim animator;
-    public int bulletCount=20;
+    public int bulletCount = 20;
     private Text ui;
     private RaycastHit hit;
     private Ray ray;
@@ -15,19 +18,17 @@ public class Shooting : MonoBehaviour
     private Transform lineTarget;
     private Vector3 target;
 
-    private const float
-    State_SHOOT = 1,
-    State_LASER = 2;
+    private const float State_SHOOT = 1,
+        State_LASER = 2;
     private float _currentState;
-
 
     void Awake()
     {
         line = GetComponent<LineRenderer>();
         line.enabled = false;
         lineTarget = GameObject.Find("AimPoint").transform;
-        ui=GameObject.Find("BulletCount").GetComponent<Text>();
-        ui.text=bulletCount.ToString();
+        ui = GameObject.Find("BulletCount").GetComponent<Text>();
+        ui.text = bulletCount.ToString();
         animator = GameObject.Find("PlayerBody").GetComponent<PlayerAnim>();
     }
 
@@ -37,7 +38,6 @@ public class Shooting : MonoBehaviour
         {
             if (Input.GetMouseButton(1))
             {
-                
                 animator.Laser(true);
                 line.enabled = true;
                 _currentState = State_LASER;
@@ -57,45 +57,52 @@ public class Shooting : MonoBehaviour
                     if (bulletCount > 0)
                     {
                         // sound shoot;
-                        bulletCount--; ui.text=bulletCount.ToString();
-                        GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+                        bulletCount--;
+                        ui.text = bulletCount.ToString();
+                        GameObject bullet = Instantiate(
+                            bulletPrefab,
+                            transform.position,
+                            transform.rotation
+                        );
                         _currentState = 0;
                     }
                     break;
                 case 2: // Laser
                     Laser();
                     break;
-                default: break;
+                default:
+                    break;
             }
         }
     }
 
     private void Laser()
     {
-
         ray = new Ray(transform.position, transform.forward * 20f);
         if (Physics.Raycast(ray, out hit))
         {
             target = hit.point;
         }
-        else target = lineTarget.position;
+        else
+            target = lineTarget.position;
 
         line.SetPosition(0, transform.position);
         line.SetPosition(1, target);
     }
-        void OnTriggerEnter(Collider col)
+    void OnTriggerEnter(Collider col)
     {
-        if(col.CompareTag("bulletDrop"))
+        if (col.CompareTag("bulletDrop"))
         {
             Destroy(col.gameObject);
- 
         }
     }
     public void CollectBullet(int count)
     {
-                              bulletCount+=count;
-            ui.text=bulletCount.ToString();
- 
+        bulletCount += count;
+        ui.text = bulletCount.ToString();
     }
-
+    public void SuperShoot() 
+    {
+    GameObject ball = Instantiate(sweetBallPrefab,transform.position,transform.rotation);
+     }
 }

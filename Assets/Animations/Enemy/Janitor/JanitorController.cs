@@ -53,7 +53,7 @@ public class JanitorController : MonoBehaviour
         {
             agent.destination = target.position;
 
-            if (agent.remainingDistance <= 4)
+            if (agent.remainingDistance <= 3)
             {
                 transform.LookAt(target.position);
                 //              if (janitorAnim.anim.GetCurrentAnimatorStateInfo(0).IsName("Standing Melee Attack Downward"))
@@ -139,7 +139,7 @@ public class JanitorController : MonoBehaviour
     }
     IEnumerator Broom()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.6f);
         broom.AddComponent<Rigidbody>().AddForce(transform.right * 200);
     }
 
