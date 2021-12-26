@@ -101,8 +101,12 @@ public class Shooting : MonoBehaviour
         bulletCount += count;
         ui.text = bulletCount.ToString();
     }
-    public void SuperShoot() 
+    public void SuperShoot()
     {
-    GameObject ball = Instantiate(sweetBallPrefab,transform.position,transform.rotation);
-     }
+        if (Score.sweetCount >= 10)
+        {
+            GameObject ball = Instantiate(sweetBallPrefab, transform.position, transform.rotation);
+            Score.sweetCount -= 10;
+        }
+    }
 }

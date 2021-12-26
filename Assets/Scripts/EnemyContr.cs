@@ -7,6 +7,8 @@ public class EnemyContr : MonoBehaviour
 {
     [SerializeField]
     private float _damage = 1f;
+    [SerializeField]
+    private GameObject sweetPrefab;
 
     private NavMeshAgent agent;
     public Transform target;
@@ -50,6 +52,8 @@ public class EnemyContr : MonoBehaviour
     }
     public void AtHome()
     {
+        int drop = Random.Range(0,3);
+        if (drop == 1) Instantiate(sweetPrefab,transform.position,transform.rotation);
         if (_currentState != 2)
         {
             _currentState = 0;

@@ -55,5 +55,6 @@ public class GameManager : MonoBehaviour
     {
       //  Time.timeScale=1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Score.sweetCount=0;
     } 
 }

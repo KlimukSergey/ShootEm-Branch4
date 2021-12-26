@@ -81,5 +81,8 @@ public class PlayerMovement : MonoBehaviour
             Destroy(col.gameObject);
             shooting.CollectBullet(5);
         }
+        if(col.CompareTag("sweet"))
+        Destroy(col.gameObject);
+        Score.sweetCount++;
     }
 }
