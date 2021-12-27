@@ -44,7 +44,6 @@ public class JanitorController : MonoBehaviour
         healthText.text = /* $"Health: {currentHealth.ToString()}"*/
             "";
         _speed = agent.speed;
-
     }
 
     void Update()
@@ -83,15 +82,16 @@ public class JanitorController : MonoBehaviour
             //      Debug.DrawRay(broomHit.transform.position,
             //       broomHit.transform.forward, Color.red, 2f);
             Collider[] col = Physics.OverlapSphere(broomHit.transform.position, _range, HeadMask);
-       //     Gizmos.color = Color.red;
-       //     Gizmos.DrawSphere(broomHit.transform.position, 2f);
+            //     Gizmos.color = Color.red;
+            //     Gizmos.DrawSphere(broomHit.transform.position, 2f);
             foreach (Collider e in col)
             {
-                if(col != null)
-                e.gameObject.GetComponentInParent<Health>().TakeDamage(damage);
-
+                if (col != null)
+                {
+                    e.gameObject.GetComponentInParent<Health>().TakeDamage(damage);
+                    AudioManager.instance.Play_SFX("broomDamage", this.transform);
+                }
             }
-
         }
     }
     public void TakeDamage(int dmg)
@@ -108,8 +108,8 @@ public class JanitorController : MonoBehaviour
             currentHealth -= dmg;
             healthText.text = $"Health: {currentHealth.ToString()}";
 
-            if (currentHealth <= 0) Death();
-
+            if (currentHealth <= 0)
+                Death();
         }
     }
 
@@ -142,5 +142,4 @@ public class JanitorController : MonoBehaviour
         yield return new WaitForSeconds(0.6f);
         broom.AddComponent<Rigidbody>().AddForce(transform.right * 200);
     }
-
 }

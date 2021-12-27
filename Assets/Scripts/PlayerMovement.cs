@@ -78,11 +78,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if (col.CompareTag("bulletDrop"))
         {
+            AudioManager.instance.Play_SFX("ammo", this.transform);
+
             Destroy(col.gameObject);
             shooting.CollectBullet(5);
         }
-        if(col.CompareTag("sweet"))
-        Destroy(col.gameObject);
+        if (col.CompareTag("sweet"))
+            Destroy(col.gameObject);
         Score.sweetCount++;
     }
 }

@@ -56,7 +56,8 @@ public class Shooting : MonoBehaviour
                 case 1: // Shoot
                     if (bulletCount > 0)
                     {
-                        // sound shoot;
+                       AudioManager.instance.Play_SFX("shoot",this.transform);
+
                         bulletCount--;
                         ui.text = bulletCount.ToString();
                         GameObject bullet = Instantiate(
@@ -65,6 +66,10 @@ public class Shooting : MonoBehaviour
                             transform.rotation
                         );
                         _currentState = 0;
+                    }
+                    else
+                    {
+                        AudioManager.instance.Play_SFX("empty", this.transform);
                     }
                     break;
                 case 2: // Laser

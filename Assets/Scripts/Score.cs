@@ -6,10 +6,12 @@ public class Score : MonoBehaviour
 {
     private Text scoreText;
     private Text sweetCountText;
+    [SerializeField]
     public static int score;
     public static int sweetCount;
     EneysSpawner enemySpawner;
     private GameObject dialoguePanel;
+    private bool key=true;
 
     // Start is called before the first frame update
     void Awake()
@@ -40,9 +42,10 @@ public class Score : MonoBehaviour
         }
 
 
-        if (score == 50)
+        if (score == 50&&key)
         {
             enemySpawner.LevelUp();
+            key=false;
         }
     }
     public void CountScore(int sc)

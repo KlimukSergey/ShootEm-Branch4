@@ -46,7 +46,7 @@ public class SweetBall : MonoBehaviour
     }
     public void DestroySweetBall()
     {
-        GetComponent<AudioSource>().Play();
+        AudioManager.instance.Play_SFX("sweetballcrash",this.transform);
 
         GameObject parts = Instantiate(sweetBallParticles, transform.position, Quaternion.identity);
         Destroy(this.gameObject,1f);
