@@ -98,6 +98,8 @@ public class JanitorController : MonoBehaviour
     {
         if (!_noneDamage && isAlive)
         {
+            string dmg_sound = $"Janitor_Dam_{Random.Range(1,3)}";
+            AudioManager.instance.Play_SFX(dmg_sound, this.transform);
             janitorAnim.Hit();
 
             agent.speed = 0f;
@@ -115,6 +117,7 @@ public class JanitorController : MonoBehaviour
 
     void Death()
     {
+        AudioManager.instance.Play_SFX("Janitor_Die", this.transform);
         healthText.text = "";
         isAlive = false;
         _noneDamage = true;

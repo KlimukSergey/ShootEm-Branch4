@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
     /// </summary>
     private void AIM()
     {
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButton(1)&&Health.isAlive)
         {
             speed = _slowSpeed;
 
@@ -79,12 +79,15 @@ public class PlayerMovement : MonoBehaviour
         if (col.CompareTag("bulletDrop"))
         {
             AudioManager.instance.Play_SFX("ammo", this.transform);
-
+            AudioManager.instance.Play_SFX("collect", this.transform);
             Destroy(col.gameObject);
             shooting.CollectBullet(5);
         }
         if (col.CompareTag("sweet"))
+        {
             Destroy(col.gameObject);
-        Score.sweetCount++;
+            Score.sweetCount++;
+            AudioManager.instance.Play_SFX("collect", this.transform);
+        }
     }
 }

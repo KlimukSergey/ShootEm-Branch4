@@ -4,10 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Score : MonoBehaviour
 {
+    
     private Text scoreText;
     private Text sweetCountText;
     [SerializeField]
-    public static int score;
+    public  int score;
+    //public static int score;
     public static int sweetCount;
     EneysSpawner enemySpawner;
     private GameObject dialoguePanel;
@@ -16,6 +18,7 @@ public class Score : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        sweetCount=0;
         scoreText = GameObject.Find("ScoreText").GetComponent<Text>();
         sweetCountText = GameObject.Find("SweetCountText").GetComponent<Text>();
         enemySpawner = GetComponent<EneysSpawner>();

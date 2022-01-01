@@ -34,6 +34,7 @@ public class SweetBall : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Enemy"))
         {
+             AudioManager.instance.Play_SFX("body", this.transform);
             _score.CountScore(1);
             collision.gameObject.GetComponent<EnemyAnimator>().Fail();
             collision.gameObject.GetComponent<EnemyContr>().AtHome();
@@ -41,6 +42,7 @@ public class SweetBall : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Boss"))
         {
+             AudioManager.instance.Play_SFX("body", this.transform);
             collision.gameObject.GetComponent<JanitorController>().TakeDamage(1);
         }
     }

@@ -34,7 +34,7 @@ public class Shooting : MonoBehaviour
 
     void Update()
     {
-        if (Time.timeScale != 0)
+        if (Time.timeScale != 0&&Health.isAlive)
         {
             if (Input.GetMouseButton(1))
             {
@@ -56,22 +56,24 @@ public class Shooting : MonoBehaviour
                 case 1: // Shoot
                     if (bulletCount > 0)
                     {
-                       AudioManager.instance.Play_SFX("shoot",this.transform);
+                        AudioManager.instance.Play_SFX("shoot", this.transform);
 
                         bulletCount--;
+                        
                         ui.text = bulletCount.ToString();
+
                         GameObject bullet = Instantiate(
                             bulletPrefab,
                             transform.position,
-                            transform.rotation
-                        );
-                        _currentState = 0;
+                            transform.rotation         );
                     }
                     else
                     {
                         AudioManager.instance.Play_SFX("empty", this.transform);
                     }
+                    _currentState = 0;
                     break;
+
                 case 2: // Laser
                     Laser();
                     break;

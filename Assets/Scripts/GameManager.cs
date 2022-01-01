@@ -10,25 +10,25 @@ public class GameManager : MonoBehaviour
     {
         menuPanel = GameObject.Find("MenuPanel");
         deadPanel = GameObject.Find("DeadPanel");
-        if(menuPanel!=null) menuPanel.SetActive(false);
-        if(deadPanel!=null) deadPanel.SetActive(false);
-        if(Time.timeScale!=1)Time.timeScale=1;
+        if (menuPanel != null)
+            menuPanel.SetActive(false);
+        if (deadPanel != null)
+            deadPanel.SetActive(false);
+        if (Time.timeScale != 1)
+            Time.timeScale = 1;
     }
-
-
 
     public void EscapeMenu()
     {
-        
         if (escKey == false)
         {
-            Time.timeScale=0;
+            Time.timeScale = 0;
             menuPanel.SetActive(true);
             escKey = true;
         }
         else
         {
-            Time.timeScale=1;
+            Time.timeScale = 1;
             menuPanel.SetActive(false);
             escKey = false;
         }
@@ -48,13 +48,15 @@ public class GameManager : MonoBehaviour
     }
     public void GameOver()
     {
-       // Time.timeScale = 0;
+        // Time.timeScale = 0;
         deadPanel.SetActive(true);
     }
     public void Restart()
     {
-      //  Time.timeScale=1;
+        //  Time.timeScale=1;
+        Score.sweetCount = 0;
+        Health.isAlive = true;
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        Score.sweetCount=0;
-    } 
+    }
 }

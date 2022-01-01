@@ -39,6 +39,8 @@ public class JanitorAnim : MonoBehaviour
 
     void Scream()
     {
+        AudioManager.instance.Play_SFX("Janitor_Scream", this.transform);
+        
         anim.SetTrigger("Scream");
         controller.agent.speed = 0f;
         StartCoroutine(StopMove());

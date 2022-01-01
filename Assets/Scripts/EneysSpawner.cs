@@ -14,12 +14,12 @@ public class EneysSpawner : MonoBehaviour
     private GameObject janitor;
     private GameObject Boss;
     [SerializeField]
-    private float timeToSpawnJanitor=10f;
+    private float timeToSpawnJanitor = 10f;
     public List<GameObject> enemies;
     public bool isSpawn;
     private int enemysCount;
     private float stoppingDistance = 5;
-     private Transform janitorSpawn;
+    private Transform janitorSpawn;
 
     void Awake()
     {
@@ -28,19 +28,21 @@ public class EneysSpawner : MonoBehaviour
         Boss.SetActive(false);
         SpawnEnemy(stoppingDistance);
         StartCoroutine(Spawn());
-        janitorSpawn=GameObject.Find("JanitorSpawn").GetComponent<Transform>();
+        janitorSpawn = GameObject.Find("JanitorSpawn").GetComponent<Transform>();
     }
 
     IEnumerator Spawn()
     {
         yield return new WaitForSeconds(timeToSpawn);
-        if (isSpawn && enemies.Count <30)
+        if (isSpawn && enemies.Count < 30 && Health.isAlive)
             SpawnEnemy(stoppingDistance);
         StartCoroutine(Spawn());
     }
     void SpawnEnemy(float stopDistance)
     {
         Transform _home = spawn[Random.Range(0, spawn.Length)];
+        string hihi_sound = $"Boy_hihi_{Random.Range(2, 4)}";
+        AudioManager.instance.Play_SFX(hihi_sound, this.transform);
         GameObject obj = Instantiate(
             enemyPrefab[Random.Range(0, enemyPrefab.Length)],
             _home.position,
@@ -54,6 +56,8 @@ public class EneysSpawner : MonoBehaviour
         isSpawn = false;
         //  GetComponent<EnemyContr>().AtHome();
         EnemyContr[] enemies = FindObjectsOfType<EnemyContr>();
+        AudioManager.instance.Play_SFX("Childrens_1", this.transform);
+        AudioManager.instance.Play_SFX("Childrens_2", this.transform);
         foreach (var e in enemies)
         {
             e.AtHome();
@@ -81,12 +85,10 @@ public class EneysSpawner : MonoBehaviour
     IEnumerator JanitorSpawn()
     {
         yield return new WaitForSeconds(timeToSpawnJanitor);
-        if(isSpawn)
+        if (isSpawn && Health.isAlive)
         {
-        GameObject jan = Instantiate(
-            janitor,janitorSpawn.position,
-        Quaternion.identity);
-       // jan.GetComponent<NavMeshAgent>().enabled=true;
+            GameObject jan = Instantiate(janitor, janitorSpawn.position, Quaternion.identity);
+            // jan.GetComponent<NavMeshAgent>().enabled=true;
         }
         JanitorSpawn();
     }
