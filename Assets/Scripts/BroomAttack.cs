@@ -8,7 +8,7 @@ public class BroomAttack : MonoBehaviour
     {
         if(other.CompareTag("PlayerHead"))
         {
-
+print ("BroomContact!");
         }
     }
 }

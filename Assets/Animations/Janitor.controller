@@ -142,10 +142,10 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0
-  m_TransitionOffset: 0
-  m_ExitTime: 1.0032567
-  m_HasExitTime: 0
+  m_TransitionDuration: 0.3072523
+  m_TransitionOffset: 0.02094508
+  m_ExitTime: 0.7862538
+  m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -379,9 +379,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 1.6053689
+  m_TransitionDuration: 3.7127194
   m_TransitionOffset: 0
-  m_ExitTime: 0.2708894
+  m_ExitTime: 0.000000008284447
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -448,9 +448,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0.83047724
   m_TransitionOffset: 0
-  m_ExitTime: 0.91176474
+  m_ExitTime: 0.70689034
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -592,7 +592,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Standing Melee Attack Downward
-  m_Speed: 1
+  m_Speed: 0.6
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1881346258194408328}

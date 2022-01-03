@@ -78,12 +78,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
   broomHit: {fileID: 5045514194727066676}
-  playerMask:
+  HeadMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1024
   damage: 1
   currentHealth: 10
   broom: {fileID: 5387481340498626635}
+  _range: 0.6
 --- !u!195 &5045514195165758535
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -94,11 +95,11 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 10
+  m_Speed: 7
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 20
-  m_StoppingDistance: 5
+  m_AngularSpeed: 200
+  m_StoppingDistance: 2.3
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0
   m_AutoRepath: 1

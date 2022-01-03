@@ -76,6 +76,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void OnTriggerEnter(Collider col)
     {
+      //  print (col.name);
         if (col.CompareTag("bulletDrop"))
         {
             AudioManager.instance.Play_SFX("ammo", this.transform);
@@ -88,6 +89,10 @@ public class PlayerMovement : MonoBehaviour
             Destroy(col.gameObject);
             Score.sweetCount++;
             AudioManager.instance.Play_SFX("collect", this.transform);
+        }
+        if(col.CompareTag("Broom"))
+        {
+//print("Get Damage");
         }
     }
 }

@@ -112,6 +112,7 @@ public class Shooting : MonoBehaviour
     {
         if (Score.sweetCount >= 10)
         {
+            AudioManager.instance.Play_SFX("SweetBall_start", this.transform);
             GameObject ball = Instantiate(sweetBallPrefab, transform.position, transform.rotation);
             Score.sweetCount -= 10;
         }

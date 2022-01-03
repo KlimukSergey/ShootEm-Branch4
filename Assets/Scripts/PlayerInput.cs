@@ -5,14 +5,14 @@ public class PlayerInput : MonoBehaviour
 {
     private PlayerMovement playerMovement;
     private GameManager manager;
-    private ZoomCamera camera;
+    private ZoomCamera _camera;
     public bool isAlive = true;
 
     private void Awake()
     {
         playerMovement = GetComponent<PlayerMovement>();
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        camera = FindObjectOfType<ZoomCamera>();
+        _camera = FindObjectOfType<ZoomCamera>();
     }
     private void Update()
     {
@@ -23,7 +23,7 @@ public class PlayerInput : MonoBehaviour
             playerMovement.Move(x, y);
 
             float FOW = Input.GetAxis(GameData.CAMERAZOOM_AXIS);
-            camera.Zoom(FOW); //  Cinemachine Field Of View
+            _camera.Zoom(FOW); //  Cinemachine Field Of View
             if (Input.GetKeyDown(KeyCode.Escape))
                 manager.EscapeMenu();
             if (Input.GetKeyDown(KeyCode.F))

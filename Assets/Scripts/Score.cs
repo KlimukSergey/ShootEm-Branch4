@@ -9,6 +9,7 @@ public class Score : MonoBehaviour
     private Text sweetCountText;
     [SerializeField]
     public  int score;
+    [SerializeField] private int sweet;
     //public static int score;
     public static int sweetCount;
     EneysSpawner enemySpawner;
@@ -18,7 +19,7 @@ public class Score : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        sweetCount=0;
+        sweetCount=sweet;
         scoreText = GameObject.Find("ScoreText").GetComponent<Text>();
         sweetCountText = GameObject.Find("SweetCountText").GetComponent<Text>();
         enemySpawner = GetComponent<EneysSpawner>();
