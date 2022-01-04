@@ -25,16 +25,23 @@ public class JanitorController : MonoBehaviour
     [SerializeField]
     GameObject broom;
 
+    private const float STATE_Pursuit = 1,
+        STATE_Attack = 2,
+        STATE_Scream = 3,
+        STATE_TakeDamage = 4;
+    private float _currentState;
+
     private bool _noneDamage = false;
     private bool isAlive = true;
     private Text healthText;
     private float _speed;
 
     [SerializeField]
-    private float _range = 2f;
+    private float _reload = 2f;
 
     private bool _attackSound = true;
     private bool _isAtack;
+    private bool _isBroomKick;
 
     void Awake()
     {
@@ -46,102 +53,172 @@ public class JanitorController : MonoBehaviour
         healthText = GameObject.Find("BossHealthText").GetComponent<Text>();
         healthText.text = "";
         _speed = agent.speed;
+
+        _isAtack = false;
+        //  _currentState = STATE_Scream;
     }
 
     void FixedUpdate()
     {
         if (agent.enabled && Health.isAlive)
+            //{
             agent.destination = target.position;
+        //
+        //          switch (_currentState)
+        //        {
+        //          case 1: // PURSUIT
+        //            agent.destination = target.position;
+        //          if (
+        //            !janitorAnim.isAttackAnimation
+        //          && agent.remainingDistance <= 3f
+        //        && agent.remainingDistance != 0
+        //  )
+        //{
+        //  if (!_isAtack)
+        //    _currentState = STATE_Attack;
+        //}
+        //break;
 
-        if (agent.remainingDistance <= 3 && Health.isAlive)
+        //case 2: // ATTACK
+        //  transform.LookAt(target.position);
+
+        // janitorAnim.Attack();
+
+        //if (!janitorAnim.isAttackAnimation)
+        // {
+        //   string atackSoundName = $"Jan_attack_{Random.Range(1, 5)}";
+        //  AudioManager.instance.Play_SFX(atackSoundName, this.transform);
+        // }
+        //_isAtack = true;
+        //StartCoroutine(AttackPause());
+        //_currentState = STATE_Pursuit;
+        //break;
+
+        // case 3: // /SCREAM
+        //   janitorAnim.Scream();
+        //  agent.speed = 0f;
+        // StartCoroutine(ScreamTimer());
+        //agent.destination = target.position;
+
+        // _currentState = STATE_Pursuit;
+        // break;
+
+        //   case 4:
+        //     ; // TakeDMG
+        //   break;
+
+        // default:
+        //   break;
+        // }
+        /*             ; // Всегда движемся к Player
+
+            if (agent.remainingDistance <= 3) // Если Player близко
+            {
+                ; // Смотреть на Player
+                Attack();
+            }
+ */
+        //}
+    }
+    //IEnumerator AttackPause()
+    //{
+    //   yield return new WaitForSeconds(3f);
+    // _isAtack = false;
+    //}
+    //IEnumerator ScreamTimer()
+    //{
+    //  yield return new WaitForSeconds(3f);
+    //agent.speed = _speed;
+
+    //yield return new WaitForSeconds(Random.Range(10, 30));
+    //if (_currentState == STATE_Pursuit)
+    //   _currentState = STATE_Scream;
+    // }
+
+    void OnTriggerEnter(Collider coll)
+    {
+        if (coll.tag == "Player" && !_isAtack)
         {
-            transform.LookAt(target.position);
-            Attack();
+            StartCoroutine(StartAttack());
         }
     }
-
+    void OnTriggerStay(Collider coll)
+    {
+        if (coll.tag == "Player" && _isBroomKick)
+        {
+            coll.GetComponent<Health>().TakeDamage(1);
+            AudioManager.instance.Play_SFX("broomDamage", this.transform);
+            _isBroomKick = false;
+        }
+    }
     public void Attack()
     {
-        if (
-            janitorAnim.anim.GetCurrentAnimatorStateInfo(0).IsName("Standing Melee Attack Downward")
-        )
-        {
-            if (!_isAtack)
-                StartCoroutine(AnimTiming());
-        }
-        else
-        {
-            _isAtack = false;
-            janitorAnim.Attack();
-        }
+        //   if (
+        //   janitorAnim.anim.GetCurrentAnimatorStateInfo(0).IsName("Standing Melee Attack Downward")
+        //    )
+        //    {
+        //       if (!_isAtack)
+        //          StartCoroutine(AnimTiming());
+        //   }
+        //   else
+        //   {
+        //       _isAtack = false;
+        //       janitorAnim.Attack();
+        //  }
 
-        AttackVoice();
-
-     //   if (
-      //      janitorAnim.anim.GetCurrentAnimatorStateInfo(0).IsName("Standing Melee Attack Downward")
-     //   )
-     //   {
-       ///     Collider[] col = Physics.OverlapSphere(broomHit.transform.position, _range, HeadMask);
+        //  AttackVoice();
+        //   if (
+        //      janitorAnim.anim.GetCurrentAnimatorStateInfo(0).IsName("Standing Melee Attack Downward")
+        //   )
+        //   {
+        ///     Collider[] col = Physics.OverlapSphere(broomHit.transform.position, _range, HeadMask);
 
         //    foreach (Collider e in col)
-       //     {
-       //         print(e.gameObject.name);
-       //         if (col != null)
-       //         {
+        //     {
+        //         print(e.gameObject.name);
+        //         if (col != null)
+        //         {
         //            e.gameObject.GetComponentInParent<Health>().TakeDamage(damage);
         //            AudioManager.instance.Play_SFX("broomDamage", this.transform);
         //        }
         //    }
-            //  broomHit.transform.LookAt(target.position);
-            //   Ray ray = new Ray(broomHit.transform.position, target.transform.position);
+        //  broomHit.transform.LookAt(target.position);
+        //   Ray ray = new Ray(broomHit.transform.position, target.transform.position);
 
-            //  if (Physics.Raycast(
-            //broomHit.transform.position,
-            //broomHit.transform.forward,
-            //        ray,
-            //        1f, HeadMask))
-            //   {
-            //      Debug.DrawRay(broomHit.transform.position,
-            //       broomHit.transform.forward, Color.red, 2f);
-            //     Gizmos.color = Color.red;
-            //     Gizmos.DrawSphere(broomHit.transform.position, 2f);
-       // }
+        //  if (Physics.Raycast(
+        //broomHit.transform.position,
+        //broomHit.transform.forward,
+        //        ray,
+        //        1f, HeadMask))
+        //   {
+        //      Debug.DrawRay(broomHit.transform.position,
+        //       broomHit.transform.forward, Color.red, 2f);
+        //     Gizmos.color = Color.red;
+        //     Gizmos.DrawSphere(broomHit.transform.position, 2f);
+        // }
     }
 
-    private void AttackVoice()
-    {
-        if (
-            !janitorAnim.anim
-                .GetCurrentAnimatorStateInfo(0)
-                .IsName("Standing Melee Attack Downward")
-        )
-        {
-            string atackSoundName = $"Jan_attack_{Random.Range(1, 5)}";
-            if (_attackSound)
-                AudioManager.instance.Play_SFX(atackSoundName, this.transform);
-            _attackSound = false;
-            StartCoroutine(WaitSound());
-        }
-    }
 
-    IEnumerator WaitSound()
-    {
-        yield return new WaitForSeconds(2.167f);
-        _attackSound = true;
-    }
 
-    IEnumerator AnimTiming()
+    IEnumerator StartAttack()
     {
-        yield return new WaitForSeconds(2.167f);
         _isAtack = true;
+
+        janitorAnim.Attack();
+
+        yield return new WaitForSeconds(0.2f);
+        string atackSoundName = $"Jan_attack_{Random.Range(1, 5)}";
+        AudioManager.instance.Play_SFX(atackSoundName, this.transform);
+
+        yield return new WaitForSeconds(0.15f);
+        _isBroomKick = true;
+
+        yield return new WaitForSeconds(0.1f);
+        _isBroomKick = false;
+
+        yield return new WaitForSeconds(_reload);
+        _isAtack = false;
     }
-   void OnTriggerStay(Collider coll)
-   {
-       if(coll.gameObject.CompareTag("Player"))
-       {
-         //  _isAtack= false;
-       }
-   }
 
     public void TakeDamage(int dmg)
     {
@@ -149,7 +226,7 @@ public class JanitorController : MonoBehaviour
         {
             string dmg_sound = $"Janitor_Dam_{Random.Range(1, 3)}";
             AudioManager.instance.Play_SFX(dmg_sound, this.transform);
-            janitorAnim.Hit();
+               janitorAnim.Hit();
 
             agent.speed = 0f;
             StartCoroutine(MoveStop());
@@ -174,7 +251,7 @@ public class JanitorController : MonoBehaviour
         StopCoroutine(NonDamage());
         StartCoroutine(Broom());
         this.agent.enabled = false;
-        janitorAnim.Death();
+        // janitorAnim.Death();
         Destroy(gameObject, 10f);
         FindObjectOfType<Score>().CountScore(20);
         FindObjectOfType<EneysSpawner>().AgainSpawn(); // спавн Карапузов

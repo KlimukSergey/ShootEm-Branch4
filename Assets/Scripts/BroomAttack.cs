@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class BroomAttack : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+     void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("PlayerHead"))
+
+        if(other.gameObject.tag=="Player"&&JanitorAnim.broomKick)
         {
 print ("BroomContact!");
+other.GetComponent<Health>().TakeDamage(1);
         }
     }
 }
