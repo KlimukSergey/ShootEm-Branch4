@@ -29,13 +29,12 @@ public class SweetBall : MonoBehaviour
             && !collision.gameObject.CompareTag("Enemy")
         )
         {
-            print(collision.gameObject.tag);
             DestroySweetBall();
         }
 
         if (collision.gameObject.CompareTag("Enemy"))
         {
-             AudioManager.instance.Play_SFX("body", this.transform);
+             AudioManager.instance.Play_SFX("SweetBall_Boy", this.transform);
             _score.CountScore(1);
             collision.gameObject.GetComponent<EnemyAnimator>().Fail();
             collision.gameObject.GetComponent<EnemyContr>().AtHome();

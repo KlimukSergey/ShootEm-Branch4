@@ -44,8 +44,7 @@ public class JanitorController : MonoBehaviour
         _isAtack = false;
         _isDamage = false;
 
-
-       StartCoroutine(Scream());
+        StartCoroutine(Scream());
     }
 
     void FixedUpdate()
@@ -60,7 +59,7 @@ public class JanitorController : MonoBehaviour
 
     void OnTriggerEnter(Collider coll)
     {
-        if (isAlive && coll.tag == "Player")
+        if (isAlive && coll.tag == "Player" && Health.isAlive)
         {
             if (!_isAtack && !_isDamage)
             {
@@ -151,12 +150,14 @@ public class JanitorController : MonoBehaviour
     }
     IEnumerator Scream()
     {
+        print($"Scream!\n");
         if (isAlive && Health.isAlive)
         {
             if (!_isAtack && !_isDamage)
             {
+                print("Успешно");
                 janitorAnim.Scream();
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(0.2f);
                 AudioManager.instance.Play_SFX("Janitor_Scream", this.transform);
                 agent.speed = 0;
                 yield return new WaitForSeconds(2);
