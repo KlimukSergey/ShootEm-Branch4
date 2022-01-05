@@ -29,6 +29,7 @@ public class SweetBall : MonoBehaviour
             && !collision.gameObject.CompareTag("Enemy")
         )
         {
+            print(collision.gameObject.tag);
             DestroySweetBall();
         }
 

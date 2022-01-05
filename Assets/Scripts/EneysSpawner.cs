@@ -25,7 +25,7 @@ public class EneysSpawner : MonoBehaviour
     {
         enemies = new List<GameObject>();
         Boss = GameObject.Find("Janitor");
-       // Boss.SetActive(false);
+        Boss.SetActive(false);
         SpawnEnemy(stoppingDistance);
         StartCoroutine(Spawn());
         janitorSpawn = GameObject.Find("JanitorSpawn").GetComponent<Transform>();
