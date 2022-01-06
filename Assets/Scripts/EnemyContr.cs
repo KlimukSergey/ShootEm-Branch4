@@ -6,8 +6,6 @@ using UnityEngine.AI;
 public class EnemyContr : MonoBehaviour
 {
     [SerializeField]
-    private float _damage = 1f;
-    [SerializeField]
     private GameObject sweetPrefab;
 
     private NavMeshAgent agent;

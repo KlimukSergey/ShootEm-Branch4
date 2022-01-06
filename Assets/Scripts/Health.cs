@@ -3,7 +3,9 @@ using UnityEngine.UI;
 using System.Collections;
 public class Health : MonoBehaviour
 {
-    public float currentHealth;
+    [SerializeField]
+    private float _health;
+    public static float currentHealth;
     //  public float bossCurrentHealth;
     public static bool isAlive = true;
     private Text healthText;
@@ -18,9 +20,9 @@ public class Health : MonoBehaviour
 
     void Awake()
     {
-            healthText = GameObject.Find("HealthText").GetComponent<Text>();
-            healthText.text = $"Health: {currentHealth}";
-
+        //healthText = GameObject.Find("HealthText").GetComponent<Text>();
+        //healthText.text = $"Health: {currentHealth}";
+        currentHealth = _health;
         _noneDamage = false;
         playerAnimator = GameObject.Find("PlayerBody").GetComponent<PlayerAnim>();
 
@@ -33,12 +35,12 @@ public class Health : MonoBehaviour
     {
         if (!_noneDamage && isAlive)
         {
-            string soundName = $"Pl_Dam_{Random.Range(1,3)}";
-            AudioManager.instance.Play_SFX(soundName,this.transform);
+            string soundName = $"Pl_Dam_{Random.Range(1, 3)}";
+            AudioManager.instance.Play_SFX(soundName, this.transform);
             currentHealth -= dmg;
             _noneDamage = true;
 
-                 /// Death
+            /// Death
             if (currentHealth <= 0)
             {
                 currentHealth = 0;
@@ -51,7 +53,7 @@ public class Health : MonoBehaviour
                 StartCoroutine(Death());
             }
 
-            healthText.text = $"Health: {currentHealth.ToString()}";
+          //  healthText.text = $"Health: {currentHealth.ToString()}";
             render.material = _ghostMat; // замена дефолтного материала на полупрозрачный
 
             StartCoroutine(NonDamage());
@@ -81,7 +83,7 @@ public class Health : MonoBehaviour
             AudioManager.instance.Play_SFX("collect", this.transform);
             Destroy(col.gameObject);
             currentHealth++;
-            healthText.text = $"Health: {currentHealth}";
+         //   healthText.text = $"Health: {currentHealth}";
         }
     }
 }

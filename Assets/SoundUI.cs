@@ -5,18 +5,18 @@ using UnityEngine.UI;
 
 public class SoundUI : MonoBehaviour
 {
+    [SerializeField]
     private Slider _musicSlider,
         _soundSlider;
+        [SerializeField]
     private float _musicVolume,
         _soundVolume;
 
     void Start()
     {
         
-         _musicSlider = GameObject.Find("MusicVolumeSlider").GetComponent<Slider>();
         _musicVolume = AudioManager.instance.GetMusicVolume();
 
-         _soundSlider = GameObject.Find("SoundVolumeSlider").GetComponent<Slider>();
         _soundVolume = AudioManager.instance.GetSoundVolume();
     }
 

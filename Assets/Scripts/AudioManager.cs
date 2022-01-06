@@ -51,9 +51,8 @@ public class AudioManager : MonoBehaviour
         }
         newSound = Instantiate(sound_object, place);
         newSound.GetComponent<AudioSource>().clip = _newClip;
-        newSound.GetComponent<AudioSource>().Play();
         newSound.GetComponent<AudioSource>().volume = _volumeSound;
-
+        newSound.GetComponent<AudioSource>().Play();
         //  sound_SFX.clip = _newClip;
         //  sound_SFX.Play();dw
     }
@@ -75,20 +74,20 @@ public class AudioManager : MonoBehaviour
 
     public void SaveSettings()
     {
-        PlayerPrefs.SetFloat("AM_MusicVolume", _volumeMusic);
-        PlayerPrefs.SetFloat("AM_SoundVolume", _volumeSound);
+        ES3.Save("AM_MusicVolume", _volumeMusic);
+        ES3.Save("AM_SoundVolume", _volumeSound);
 
-        PlayerPrefs.SetInt("AM_MusicMute", _mutedMusic ? 1 : 0);
-        PlayerPrefs.SetInt("AM_SoundMute", _mutedSound ? 1 : 0);
+        ES3.Save("AM_MusicMute", _mutedMusic ? 1 : 0);
+        ES3.Save("AM_SoundMute", _mutedSound ? 1 : 0);
     }
 
     public void LoadSettings()
     {
-        _volumeMusic = PlayerPrefs.GetFloat("AM_MusicVolume", 1);
-        _volumeSound = PlayerPrefs.GetFloat("AM_SoundVolume", 1);
+        _volumeMusic = ES3.Load("AM_MusicVolume", 1);
+        _volumeSound = ES3.Load("AM_SoundVolume", 1);
 
-        _mutedMusic = PlayerPrefs.GetInt("AM_MusicMute", 0) == 1;
-        _mutedSound = PlayerPrefs.GetInt("AM_SoundMute", 0) == 1;
+        _mutedMusic = ES3.Load("AM_MusicMute", 0) == 1;
+        _mutedSound = ES3.Load("AM_SoundMute", 0) == 1;
     }
 
     public void SetMusicVolume(float volume)

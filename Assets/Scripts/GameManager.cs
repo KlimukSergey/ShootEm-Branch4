@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -40,27 +41,37 @@ public class GameManager : MonoBehaviour
     }
     public void ToMainMenu()
     {
+        Score.sweetCount = 0;
+        Health.isAlive = true;
+Score.instance.Record();
         SceneManager.LoadScene(0);
     }
     public void GameQuit()
     {
+        if(Score.instance.score!=0)
+        Score.instance.Record();
         Application.Quit();
     }
+
     public void GameOver()
     {
         // Time.timeScale = 0;
         deadPanel.SetActive(true);
+        GameObject.Find("DP_ScoreText").GetComponent<Text>().text = Score.instance.score.ToString();
+        Score.instance.Record();
     }
     public void Restart()
     {
         //  Time.timeScale=1;
         Score.sweetCount = 0;
         Health.isAlive = true;
-
+        Score.instance.Record();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void ResetScore()
     {
-        
+        Score.high_Score = 0;
+        Score.instance.SaveHiScore();
+        GameObject.Find("HighScore").GetComponent<Text>().text = "0";
     }
 }

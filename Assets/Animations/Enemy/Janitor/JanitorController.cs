@@ -150,12 +150,10 @@ public class JanitorController : MonoBehaviour
     }
     IEnumerator Scream()
     {
-        print($"Scream!\n");
         if (isAlive && Health.isAlive)
         {
             if (!_isAtack && !_isDamage)
             {
-                print("Успешно");
                 janitorAnim.Scream();
                 yield return new WaitForSeconds(0.2f);
                 AudioManager.instance.Play_SFX("Janitor_Scream", this.transform);

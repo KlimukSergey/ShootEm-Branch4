@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Shooting : MonoBehaviour
 {
+    public static Shooting instance;
     [SerializeField]
     private GameObject bulletPrefab;
     [SerializeField]
@@ -24,6 +25,7 @@ public class Shooting : MonoBehaviour
 
     void Awake()
     {
+        instance=this;
         line = GetComponent<LineRenderer>();
         line.enabled = false;
         lineTarget = GameObject.Find("AimPoint").transform;
