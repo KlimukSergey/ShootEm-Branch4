@@ -17,7 +17,6 @@ public class EneysSpawner : MonoBehaviour
     private float timeToSpawnJanitor = 10f;
     public List<GameObject> enemies;
     public bool isSpawn;
-    private int enemysCount;
     private float stoppingDistance = 5;
     private Transform janitorSpawn;
 
@@ -26,7 +25,7 @@ public class EneysSpawner : MonoBehaviour
         enemies = new List<GameObject>();
         Boss = GameObject.Find("Janitor");
         Boss.SetActive(false);
-        SpawnEnemy(stoppingDistance);
+      //  SpawnEnemy(stoppingDistance);
         StartCoroutine(Spawn());
         janitorSpawn = GameObject.Find("JanitorSpawn").GetComponent<Transform>();
     }
