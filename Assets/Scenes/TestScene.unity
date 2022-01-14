@@ -18729,7 +18729,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh268202
+  m_Name: pb_Mesh100654
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -22842,7 +22842,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 2.52
@@ -28266,7 +28266,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4a861066e1b65ec488b1ea4ba1b06b2c, type: 2}
+  - {fileID: 2100000, guid: 0e22a030532362f468d54d70897ccf01, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -31378,7 +31378,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh267646
+  m_Name: pb_Mesh55050
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -32519,7 +32519,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4a861066e1b65ec488b1ea4ba1b06b2c, type: 2}
+  - {fileID: 2100000, guid: 0e22a030532362f468d54d70897ccf01, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
