@@ -15,11 +15,19 @@ C:/Users/User/Documents/GitHub/ShootEm-Branch4
 -logFile
 Logs/AssetImportWorker2.log
 -srvPort
+<<<<<<< Updated upstream
 60756
 Successfully changed project path to: C:/Users/User/Documents/GitHub/ShootEm-Branch4
 C:/Users/User/Documents/GitHub/ShootEm-Branch4
 Using Asset Import Pipeline V2.
 Refreshing native plugins compatible for Editor in 222.15 ms, found 2 plugins.
+=======
+52041
+Successfully changed project path to: D:/[Unity_Projects]/ShootEm-Branch4
+D:/[Unity_Projects]/ShootEm-Branch4
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 3923.27 ms, found 2 plugins.
+>>>>>>> Stashed changes
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.26f1 (7298b473bc1a)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.26f1/Editor/Data/Resources/UnitySubsystems
@@ -30,6 +38,7 @@ Direct3D:
     Renderer: Intel(R) HD Graphics (ID=0x156)
     Vendor:   
     VRAM:     128 MB
+<<<<<<< Updated upstream
     Driver:   10.18.10.4252
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.26f1/Editor/Data/Managed'
@@ -482,3 +491,6 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+=======
+    Driver:   10.18.10.5161
+>>>>>>> Stashed changes

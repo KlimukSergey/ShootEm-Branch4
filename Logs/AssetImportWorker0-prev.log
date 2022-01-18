@@ -15,11 +15,19 @@ D:/[Unity_Projects]/ShootEm-Branch4
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
+<<<<<<< Updated upstream
 53139
 Successfully changed project path to: D:/[Unity_Projects]/ShootEm-Branch4
 D:/[Unity_Projects]/ShootEm-Branch4
 Using Asset Import Pipeline V2.
 Refreshing native plugins compatible for Editor in 242.05 ms, found 2 plugins.
+=======
+52041
+Successfully changed project path to: D:/[Unity_Projects]/ShootEm-Branch4
+D:/[Unity_Projects]/ShootEm-Branch4
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 1118.27 ms, found 2 plugins.
+>>>>>>> Stashed changes
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.25f1 (9b9180224418)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.25f1/Editor/Data/Resources/UnitySubsystems
@@ -31,6 +39,7 @@ Direct3D:
     Vendor:   
     VRAM:     128 MB
     Driver:   10.18.10.5161
+<<<<<<< Updated upstream
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.25f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.25f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
@@ -74,3 +83,5 @@ Domain Reload Profiling:
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
 Registered in 0.065475 seconds.
+=======
+>>>>>>> Stashed changes

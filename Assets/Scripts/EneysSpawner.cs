@@ -22,10 +22,14 @@ public class EneysSpawner : MonoBehaviour
 
     void Awake()
     {
-        enemies = new List<GameObject>();
+        enemies = new List<GameObject>(32);
         Boss = GameObject.Find("Janitor");
         Boss.SetActive(false);
+<<<<<<< Updated upstream
       //  SpawnEnemy(stoppingDistance);
+=======
+       // SpawnEnemy(stoppingDistance);
+>>>>>>> Stashed changes
         StartCoroutine(Spawn());
         janitorSpawn = GameObject.Find("JanitorSpawn").GetComponent<Transform>();
     }
@@ -33,7 +37,8 @@ public class EneysSpawner : MonoBehaviour
     IEnumerator Spawn()
     {
         yield return new WaitForSeconds(timeToSpawn);
-        if (isSpawn && enemies.Count < 30 && Health.isAlive)
+
+        if (isSpawn && enemies.Count < 30)
             SpawnEnemy(stoppingDistance);
         StartCoroutine(Spawn());
     }
@@ -41,7 +46,7 @@ public class EneysSpawner : MonoBehaviour
     {
         Transform _home = spawn[Random.Range(0, spawn.Length)];
         string hihi_sound = $"Boy_hihi_{Random.Range(2, 4)}";
-        AudioManager.instance.Play_SFX(hihi_sound, this.transform);
+      //  AudioManager.instance.Play_SFX(hihi_sound, this.transform);
         GameObject obj = Instantiate(
             enemyPrefab[Random.Range(0, enemyPrefab.Length)],
             _home.position,
