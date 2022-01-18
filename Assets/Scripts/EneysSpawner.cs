@@ -27,11 +27,15 @@ public class EneysSpawner : MonoBehaviour
         Boss = GameObject.Find("Janitor");
         Boss.SetActive(false);
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       //  SpawnEnemy(stoppingDistance);
 =======
        // SpawnEnemy(stoppingDistance);
 >>>>>>> Stashed changes
+=======
+        SpawnEnemy(stoppingDistance);
+>>>>>>> parent of 9c5c9f5 (0.3.1)
 =======
         SpawnEnemy(stoppingDistance);
 >>>>>>> parent of 9c5c9f5 (0.3.1)
