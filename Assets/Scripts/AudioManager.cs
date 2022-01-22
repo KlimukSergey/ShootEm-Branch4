@@ -35,9 +35,9 @@ public class AudioManager : MonoBehaviour
     void Awake()
     {
         instance = this;
-        musicSource = GameObject.Find("BackGroundMusic").GetComponent<AudioSource>(); //////////
-        sound_SFX = GameObject.Find("BackGroundSFX").GetComponent<AudioSource>();    //////////
-        sound_SFX_1 = GameObject.Find("BackGroundSFX_1").GetComponent<AudioSource>(); ////////
+        musicSource = GameObject.Find("BackGroundMusic").GetComponent<AudioSource>();
+        sound_SFX = GameObject.Find("BackGroundSFX").GetComponent<AudioSource>();
+        sound_SFX_1 = GameObject.Find("BackGroundSFX_1").GetComponent<AudioSource>();
     }
 
     public void Play_SFX(string clipName, Transform place)
@@ -92,10 +92,10 @@ public class AudioManager : MonoBehaviour
 
     public void SetMusicVolume(float volume)
     {
-        musicSource.volume = volume; 
-        sound_SFX.volume = volume;   
-       sound_SFX_1.volume = volume;  
-        _volumeMusic = volume;     
+        musicSource.volume = volume;
+        sound_SFX.volume = volume;
+        sound_SFX_1.volume = volume;
+        _volumeMusic = volume;
         SaveSettings();
     }
 
