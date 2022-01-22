@@ -150,6 +150,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 4.639
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 9c884f1e119c10649ad17d381a969688, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: db38bcc7b99057c4aaeab4e3a83dfd56, type: 2}
     - target: {fileID: 919132149155446097, guid: 9c884f1e119c10649ad17d381a969688, type: 3}
       propertyPath: m_Name
       value: Broom
@@ -291,6 +295,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 6.735937
       objectReference: {fileID: 0}
+    - target: {fileID: -4250832825194116423, guid: bab014648fa966c4383d3693c8ccefea, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: db38bcc7b99057c4aaeab4e3a83dfd56, type: 2}
     - target: {fileID: -3813658957553638184, guid: bab014648fa966c4383d3693c8ccefea, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -85.055565
@@ -403,6 +411,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -2.8842163
       objectReference: {fileID: 0}
+    - target: {fileID: 5139777655244087475, guid: bab014648fa966c4383d3693c8ccefea, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: db38bcc7b99057c4aaeab4e3a83dfd56, type: 2}
     - target: {fileID: 5413610054776174072, guid: bab014648fa966c4383d3693c8ccefea, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -7.9911366
@@ -552,4 +564,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
-  isAttackAnimation: 0

@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 3efb07da629ea70448651c4b6588eca6, type: 3}
+  - {fileID: 2100000, guid: db38bcc7b99057c4aaeab4e3a83dfd56, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -201,7 +201,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f7c07a168b966784fae42f0ecb9bbfe9, type: 2}
+  - {fileID: 2100000, guid: c2d71289f1699454aa4ab8b589ced83b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -274,6 +274,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 11.821
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0a6e61a4df301e54c88f498c0e7bc3cc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: db38bcc7b99057c4aaeab4e3a83dfd56, type: 2}
     - target: {fileID: 919132149155446097, guid: 0a6e61a4df301e54c88f498c0e7bc3cc, type: 3}
       propertyPath: m_Name
       value: Shovel

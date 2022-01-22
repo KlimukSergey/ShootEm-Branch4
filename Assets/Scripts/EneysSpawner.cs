@@ -15,6 +15,8 @@ public class EneysSpawner : MonoBehaviour
     private GameObject Boss;
     [SerializeField]
     private float timeToSpawnJanitor = 10f;
+    [SerializeField]
+    private float _maxEnemiesInScene = 15;
     public List<GameObject> enemies;
     public bool isSpawn;
     private float stoppingDistance = 5;
@@ -33,7 +35,7 @@ public class EneysSpawner : MonoBehaviour
     IEnumerator Spawn()
     {
         yield return new WaitForSeconds(timeToSpawn);
-        if (isSpawn && enemies.Count < 30 && Health.isAlive)
+        if (isSpawn && enemies.Count < _maxEnemiesInScene && Health.isAlive)
             SpawnEnemy(stoppingDistance);
         StartCoroutine(Spawn());
     }
