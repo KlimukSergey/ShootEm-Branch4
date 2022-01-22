@@ -79,8 +79,8 @@ public class PlayerMovement : MonoBehaviour
       //  print (col.name);
         if (col.CompareTag("bulletDrop"))
         {
-         //   AudioManager.instance.Play_SFX("ammo", this.transform);
-         //   AudioManager.instance.Play_SFX("collect", this.transform);
+            AudioManager.instance.Play_SFX("ammo", this.transform);
+            AudioManager.instance.Play_SFX("collect", this.transform);
             Destroy(col.gameObject);
             shooting.CollectBullet(5);
         }

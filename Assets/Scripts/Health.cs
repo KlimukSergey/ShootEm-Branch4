@@ -5,26 +5,17 @@ public class Health : MonoBehaviour
 {
     [SerializeField]
     private float _health;
-
     public static float currentHealth;
     //  public float bossCurrentHealth;
     public static bool isAlive = true;
-    
     private Text healthText;
-
     private Text _bossText;
-
     private bool _noneDamage;
-
     PlayerAnim playerAnimator;
-
     [SerializeField]
     private SkinnedMeshRenderer render;
-
     private Material _defaultMat;
-
     private Material _ghostMat;
-
     private Material[] mats;
 
     void Awake()

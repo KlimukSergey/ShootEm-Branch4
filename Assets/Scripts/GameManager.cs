@@ -59,8 +59,6 @@ Score.instance.Record();
         deadPanel.SetActive(true);
         GameObject.Find("DP_ScoreText").GetComponent<Text>().text = Score.instance.score.ToString();
         Score.instance.Record();
-
-        Destroy(GameObject.FindObjectOfType<EneysSpawner>());
     }
     public void Restart()
     {
