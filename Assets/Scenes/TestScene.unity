@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
+  m_IndirectSpecularColor: {r: 0.4450916, g: 0.4946903, b: 0.5737765, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -16972,7 +16972,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.38268343, y: -0.000000015896617, z: 0.000000006584594, w: 0.92387956}
+  m_LocalRotation: {x: 0.38268343, y: 0.00000001589663, z: -0.0000000065845986, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 38.91, z: -37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -18075,7 +18075,7 @@ MonoBehaviour:
   janitor: {fileID: 5690753641690955569, guid: 7d150df9aff4e254794a24a521ce0406, type: 3}
   timeToSpawnJanitor: 10
   enemies: []
-  isSpawn: 0
+  isSpawn: 1
 --- !u!114 &1068132103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18228,7 +18228,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1085896466}
-  m_LocalRotation: {x: 0.38268343, y: -0.000000015896617, z: 0.000000006584594, w: 0.92387956}
+  m_LocalRotation: {x: 0.38268343, y: 0.00000001589663, z: -0.0000000065845986, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 38.91, z: -37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -22776,7 +22776,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1430084939
 Transform:
   m_ObjectHideFlags: 0
@@ -23797,7 +23797,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: 6fff045462b5ec04a99e3e498aa1bbf4, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: a25a26ecc7579944c81b22b63db36e84, type: 2}
 --- !u!4 &1530589966
 Transform:
   m_ObjectHideFlags: 0
