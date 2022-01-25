@@ -11,6 +11,7 @@
     "com.unity.probuilder": "4.5.2",
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -59,6 +60,10 @@
     "com.unity.purchasing": "4.0.3",
     "com.unity.shadergraph": "10.7.0",
 >>>>>>> parent of 9c5c9f5 (0.3.1)
+=======
+    "com.unity.purchasing": "4.1.2",
+    "com.unity.shadergraph": "10.8.1",
+>>>>>>> Stashed changes
 =======
     "com.unity.purchasing": "4.1.2",
     "com.unity.shadergraph": "10.8.1",
