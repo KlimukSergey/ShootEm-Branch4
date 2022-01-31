@@ -8,9 +8,9 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
 
     private AudioClip _newClip;
-    private AudioSource sound_SFX;
-    private AudioSource sound_SFX_1;
-    private AudioSource musicSource;
+    private AudioSource sound_SFX,
+                       sound_SFX_1,
+                       musicSource;
 
     [SerializeField]
     public AudioClip[] sfx;
@@ -25,10 +25,10 @@ public class AudioManager : MonoBehaviour
     GameObject sound_object;
 
     private float _volumeMusic,
-        _volumeSound;
+                  _volumeSound;
 
     private bool _mutedMusic,
-        _mutedSound;
+                 _mutedSound;
 
     private GameObject newSound;
 
@@ -61,12 +61,14 @@ public class AudioManager : MonoBehaviour
         AudioClip _BackGrndSFX = backGrnd_sfx[Random.Range(0, backGrnd_sfx.Length)];
         return _BackGrndSFX;
     }
+
     public void GameOverMusic()
     {
         sound_SFX.Stop();
 
         musicSource.clip = _gameOverMusic;
     }
+
     public void PlayFinalMusic()
     {
         musicSource.Play();
@@ -94,7 +96,7 @@ public class AudioManager : MonoBehaviour
     {
         musicSource.volume = volume; 
         sound_SFX.volume = volume;   
-       sound_SFX_1.volume = volume;  
+        sound_SFX_1.volume = volume;  
         _volumeMusic = volume;     
         SaveSettings();
     }

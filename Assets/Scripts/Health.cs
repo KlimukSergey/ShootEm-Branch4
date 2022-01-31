@@ -7,7 +7,6 @@ public class Health : MonoBehaviour
     private float _health;
 
     public static float currentHealth;
-    //  public float bossCurrentHealth;
     public static bool isAlive = true;
     
     private Text healthText;
@@ -29,8 +28,6 @@ public class Health : MonoBehaviour
 
     void Awake()
     {
-        //healthText = GameObject.Find("HealthText").GetComponent<Text>();
-        //healthText.text = $"Health: {currentHealth}";
         currentHealth = _health;
         _noneDamage = false;
         playerAnimator = GameObject.Find("PlayerBody").GetComponent<PlayerAnim>();
@@ -62,7 +59,6 @@ public class Health : MonoBehaviour
                 StartCoroutine(Death());
             }
 
-          //  healthText.text = $"Health: {currentHealth.ToString()}";
             render.material = _ghostMat; // замена дефолтного материала на полупрозрачный
 
             StartCoroutine(NonDamage());
@@ -87,12 +83,10 @@ public class Health : MonoBehaviour
             TakeDamage(1);
         if (col.CompareTag("aidKit"))
         {
-            //collect sound
             AudioManager.instance.Play_SFX("Kit_Collect", this.transform);
             AudioManager.instance.Play_SFX("collect", this.transform);
             Destroy(col.gameObject);
             currentHealth++;
-         //   healthText.text = $"Health: {currentHealth}";
         }
     }
 }

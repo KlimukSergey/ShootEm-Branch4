@@ -14,7 +14,8 @@ public class EnemyContr : MonoBehaviour
     public Transform home;
 
     private const float Attach_STATE = 1,
-        GoHome_STATE = 2;
+                        GoHome_STATE = 2;
+
     private float _currentState;
 
     void Awake()
@@ -28,13 +29,15 @@ public class EnemyContr : MonoBehaviour
 
     void Update()
     {
+
         switch (_currentState)
         {
             case 1: // Attach_State
-                agent.destination = target.position;
+        agent.destination = target.position;
+  
                 break;
 
-            case 2:
+            case 2: // Go Home
                 if (agent.remainingDistance < 1)
                 {
                     FindObjectOfType<EneysSpawner>().enemies.Remove(gameObject);
@@ -54,6 +57,7 @@ public class EnemyContr : MonoBehaviour
             GameObject sweet = Instantiate(sweetPrefab, transform.position, transform.rotation);
             Destroy(sweet, 180f);
         }
+
         if (_currentState != 2)
         {
             _currentState = 0;
@@ -68,4 +72,5 @@ public class EnemyContr : MonoBehaviour
         yield return new WaitForSeconds(2f);
         _currentState = 2;
     }
+
 }
