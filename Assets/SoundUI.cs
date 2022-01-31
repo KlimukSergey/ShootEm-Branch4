@@ -8,7 +8,8 @@ public class SoundUI : MonoBehaviour
     [SerializeField]
     private Slider _musicSlider,
         _soundSlider;
-        [SerializeField]
+
+    [SerializeField]
     private float _musicVolume,
         _soundVolume;
 
@@ -23,9 +24,15 @@ public class SoundUI : MonoBehaviour
     void Update()
      {
          if(_musicSlider.value!=_musicVolume)
-         AudioManager.instance.SetMusicVolume(_musicSlider.value);
+         {
+          AudioManager.instance.SetMusicVolume(_musicSlider.value);
+         _musicVolume= _musicSlider.value;
+         }
 
          if(_soundSlider.value!=_soundVolume)
-         AudioManager.instance.SetSoundVolume(_soundSlider.value);
+         {
+          AudioManager.instance.SetSoundVolume(_soundSlider.value);
+         _soundVolume= _soundSlider.value;
+         }
       }
 }

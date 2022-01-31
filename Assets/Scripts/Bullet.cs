@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
     private Transform target;
     private Score _score;
     private Rigidbody rb;
+
     [SerializeField]
     GameObject snowBallParticles;
 
@@ -43,6 +44,7 @@ public class Bullet : MonoBehaviour
             collision.gameObject.GetComponent<JanitorController>().TakeDamage(1);
         }
     }
+
     public void DestroySnowBall()
     {
         GameObject parts = Instantiate(snowBallParticles, transform.position, Quaternion.identity);
@@ -51,6 +53,7 @@ public class Bullet : MonoBehaviour
         Destroy(this.gameObject, 1f);
         Destroy(parts, 1f);
     }
+    
     IEnumerator SnowBallLife()
     {
         yield return new WaitForSeconds(10f);

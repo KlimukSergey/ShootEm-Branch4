@@ -24,38 +24,30 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
-        AIM();
+       // AIM();
+
         if (!controller.isGrounded)
             controller.Move(Vector3.down * 10f);
+
         if (controller.transform.rotation.x != 0)
         {
             Vector3 vec = new Vector3(controller.transform.rotation.x, 0f, 0f);
             controller.Move(vec * -1);
         }
+        if(Input.GetMouseButtonUp(1))speed=_currentSpeed;
     }
     /// <summary>
     /// прицеливание   
     /// </summary>
-    private void AIM()
+    public void AIM()
     {
-        if (Input.GetMouseButton(1)&&Health.isAlive)
-        {
             speed = _slowSpeed;
-
-            //  RaycastHit hit;
-            //  if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, layerMask))
-            //   {
-            //        transform.LookAt(hit.point);
-            //   }
             float hit;
             Plane plane = new Plane(Vector3.up, Vector3.zero);
             if (plane.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
             {
                 transform.LookAt(Camera.main.ScreenPointToRay(Input.mousePosition).GetPoint(hit));
             }
-        }
-        else
-            speed = _currentSpeed;
     }
 
     public void Move(float x, float y)
@@ -76,11 +68,10 @@ public class PlayerMovement : MonoBehaviour
     }
     void OnTriggerEnter(Collider col)
     {
-      //  print (col.name);
         if (col.CompareTag("bulletDrop"))
         {
-         //   AudioManager.instance.Play_SFX("ammo", this.transform);
-         //   AudioManager.instance.Play_SFX("collect", this.transform);
+            AudioManager.instance.Play_SFX("ammo", this.transform);
+            AudioManager.instance.Play_SFX("collect", this.transform);
             Destroy(col.gameObject);
             shooting.CollectBullet(5);
         }
@@ -89,10 +80,6 @@ public class PlayerMovement : MonoBehaviour
             Destroy(col.gameObject);
             Score.sweetCount++;
             AudioManager.instance.Play_SFX("collect", this.transform);
-        }
-        if(col.CompareTag("Broom"))
-        {
-//print("Get Damage");
         }
     }
 }
