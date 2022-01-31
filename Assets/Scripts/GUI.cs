@@ -21,13 +21,12 @@ public class GUI : MonoBehaviour
         dialoguePanel = GameObject.Find("Dialogue");
     }
 
-    // Update is called once per frame
     void Update()
     {
         _health.text = $"Health: {Health.currentHealth}";
         _bullet.text = $"Bullet: {Shooting.instance.bulletCount}";
         _score.text = $"Score: {Score.instance.score}   / {Score.high_Score}";
-        _sweet.text = $"Sweet: {Score.sweetCount}";
+        _sweet.text = $"Sweet: {Score.sweetCount} / 10";
 
         if (Score.sweetCount >= 10)
         {

@@ -9,7 +9,6 @@ public class SpawnObj : MonoBehaviour
     [SerializeField] private GameObject bulletPref, aidKitPref;
     [SerializeField] private float timeSpawnBullet, timeSpawnAid_Kit;
 
-    // Start is called before the first frame update
     void Awake()
     {
         bulletSpawn = GameObject.FindGameObjectsWithTag("BulletSpawn");
@@ -18,9 +17,6 @@ public class SpawnObj : MonoBehaviour
         SpawnAidKit();
     }
 
-    void Update()
-    {
-    }
     void SpawnBullet()
     {
         StartCoroutine(WaitBullet(timeSpawnBullet));
@@ -36,10 +32,6 @@ public class SpawnObj : MonoBehaviour
         GameObject kit = Instantiate(aidKitPref,
         aidKitSpawn[Random.Range(0, aidKitSpawn.Length)].transform.position,
         transform.rotation);
-        //  GameObject kit=  Instantiate(aidKitPref,
-        //               aidKitSpawn[Random.Range(0, aidKitSpawn.Length)].transform.position,
-        //             transform.rotation);
-
         Destroy(kit, 60f);
 
     }
