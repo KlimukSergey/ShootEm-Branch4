@@ -110,7 +110,6 @@ public class Shooting : MonoBehaviour
         bulletCount += count;
         ui.text = bulletCount.ToString();
     }
-    
     public void SuperShoot()
     {
         if (Score.sweetCount >= 10)
