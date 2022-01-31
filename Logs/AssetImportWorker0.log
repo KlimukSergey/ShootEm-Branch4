@@ -18,11 +18,19 @@ Logs/AssetImportWorker0.log
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 63164
 Successfully changed project path to: C:/Users/uncle/OneDrive/Documents/GitHub/ShootEm-Branch4
 C:/Users/uncle/OneDrive/Documents/GitHub/ShootEm-Branch4
 Using Asset Import Pipeline V2.
 Refreshing native plugins compatible for Editor in 1211.63 ms, found 2 plugins.
+=======
+60135
+Successfully changed project path to: C:/Users/User/Documents/GitHub/ShootEm-Branch4
+C:/Users/User/Documents/GitHub/ShootEm-Branch4
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 1503.53 ms, found 2 plugins.
+>>>>>>> parent of 46a74be (0.6)
 =======
 60135
 Successfully changed project path to: C:/Users/User/Documents/GitHub/ShootEm-Branch4
@@ -62,7 +70,11 @@ Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.26f1/Editor/Data/Mo
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56096
+=======
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56004
+>>>>>>> parent of 46a74be (0.6)
 =======
 Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56004
 >>>>>>> parent of 46a74be (0.6)
@@ -76,6 +88,7 @@ Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.26f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.26f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -94,6 +107,8 @@ Domain Reload Profiling:
 >>>>>>> parent of 46a74be (0.6)
 =======
 >>>>>>> parent of 46a74be (0.6)
+=======
+>>>>>>> parent of 46a74be (0.6)
 Registered in 0.004364 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
@@ -106,6 +121,9 @@ Domain Reload Profiling:
 		BeginReloadAssembly (194ms)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 46a74be (0.6)
+=======
 >>>>>>> parent of 46a74be (0.6)
 =======
 >>>>>>> parent of 46a74be (0.6)
@@ -116,6 +134,7 @@ Domain Reload Profiling:
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (2ms)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -147,6 +166,11 @@ Domain Reload Profiling:
 			LoadAssemblies (190ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
 >>>>>>> parent of 46a74be (0.6)
+=======
+		EndReloadAssembly (1327ms)
+			LoadAssemblies (190ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+>>>>>>> parent of 46a74be (0.6)
 			SetupTypeCache (420ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (81ms)
@@ -160,6 +184,9 @@ Domain Reload Profiling:
 				ProcessInitializeOnLoadMethodAttributes (72ms)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 46a74be (0.6)
+=======
 >>>>>>> parent of 46a74be (0.6)
 =======
 >>>>>>> parent of 46a74be (0.6)
@@ -174,8 +201,11 @@ Registering precompiled user dll's ...
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Registered in 0.708977 seconds.
 =======
+=======
+>>>>>>> parent of 46a74be (0.6)
 =======
 >>>>>>> parent of 46a74be (0.6)
 =======
@@ -254,6 +284,9 @@ Start importing Assets/Scenes/TestScene/LightingData.asset using Guid(d3971e0062
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 46a74be (0.6)
+=======
 >>>>>>> parent of 46a74be (0.6)
 =======
 >>>>>>> parent of 46a74be (0.6)
