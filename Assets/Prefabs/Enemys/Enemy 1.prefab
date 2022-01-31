@@ -70,6 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2023bbc62bb6184597a6277f0ba20e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _damage: 1
   sweetPrefab: {fileID: 1836792843723484553, guid: b0300ac75ac1e914dbb3b0683e421742, type: 3}
   target: {fileID: 0}
   home: {fileID: 0}
@@ -113,7 +114,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68bc4a0ce1013bb4e93d1a20edd1bf8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 1648688935}
 --- !u!1001 &1950799919
 PrefabInstance:
   m_ObjectHideFlags: 0
