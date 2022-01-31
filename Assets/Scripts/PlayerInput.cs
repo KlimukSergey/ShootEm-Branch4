@@ -4,16 +4,13 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
     private PlayerMovement playerMovement;
-    private Shooting shooting;
     private GameManager manager;
-    
     private ZoomCamera _camera;
     public bool isAlive = true;
 
     private void Awake()
     {
         playerMovement = GetComponent<PlayerMovement>();
-        shooting = GetComponentInChildren<Shooting>();
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
         _camera = FindObjectOfType<ZoomCamera>();
     }
@@ -27,23 +24,10 @@ public class PlayerInput : MonoBehaviour
 
             float FOW = Input.GetAxis(GameData.CAMERAZOOM_AXIS);
             _camera.Zoom(FOW); //  Cinemachine Field Of View
-
-                // Pause
             if (Input.GetKeyDown(KeyCode.Escape))
                 manager.EscapeMenu();
-
-                // SuperShoot
-            if(Input.GetAxis(GameData.SWEETBALL)!=0)
-                shooting.SuperShoot();
- 
-               // AIM
-            if(Input.GetAxis(GameData.AIM)!=0)
-                playerMovement.AIM();
-
-                // SHOOT
-           // if(Input.GetAxis(GameData.SHOOT)!=0)
-                
-
+            if (Input.GetKeyDown(KeyCode.F))
+                GetComponentInChildren<Shooting>().SuperShoot();
         }
     }
 }

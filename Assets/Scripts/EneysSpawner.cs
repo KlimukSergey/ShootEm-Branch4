@@ -87,6 +87,7 @@ public class EneysSpawner : MonoBehaviour
         if (isSpawn && Health.isAlive)
         {
             GameObject jan = Instantiate(janitor, janitorSpawn.position, Quaternion.identity);
+            // jan.GetComponent<NavMeshAgent>().enabled=true;
         }
         JanitorSpawn();
     }
