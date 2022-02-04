@@ -7,14 +7,18 @@ public class GameManager : MonoBehaviour
     private GameObject menuPanel;
     private GameObject deadPanel;
     private bool escKey;
+
     void Start()
     {
         menuPanel = GameObject.Find("MenuPanel");
         deadPanel = GameObject.Find("DeadPanel");
+
         if (menuPanel != null)
             menuPanel.SetActive(false);
-        if (deadPanel != null)
+
+      //  if (deadPanel != null)
             deadPanel.SetActive(false);
+
         if (Time.timeScale != 1)
             Time.timeScale = 1;
     }
