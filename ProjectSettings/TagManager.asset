@@ -28,8 +28,8 @@ TagManager:
   - Ground
   - Player
   - HeadPlayer
-  - 
-  - 
+  - noLight
+  - Baked
   - 
   - 
   - 

@@ -55,16 +55,14 @@ Score.instance.Record();
 
     public void GameOver()
     {
-        // Time.timeScale = 0;
         deadPanel.SetActive(true);
         GameObject.Find("DP_ScoreText").GetComponent<Text>().text = Score.instance.score.ToString();
         Score.instance.Record();
 
-        Destroy(GameObject.FindObjectOfType<EneysSpawner>());
+       // Destroy(GameObject.FindObjectOfType<EneysSpawner>());
     }
     public void Restart()
     {
-        //  Time.timeScale=1;
         Score.sweetCount = 0;
         Health.isAlive = true;
         Score.instance.Record();
